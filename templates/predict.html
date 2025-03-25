@@ -1,0 +1,183 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+<!-- Contact Start -->
+<div class="container-fluid bg-secondary px-0">
+    <div class="row g-0">
+        <div class="col-lg-6 py-6 px-5">
+            <h1 class="display-5 mb-4">Predict Mental Stress</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row g-3">
+                    
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="Anxiety:{{anxiety_level}}" name="anxiety_level">
+                            <label for="form-floating-1">Anxiety_Level:{{anxiety_level}}</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="Self_Esteem:{{self_esteem}}" name="self">
+                            <label for="form-floating-1">Self_Esteem:{{self_esteem}}</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="Mental_Health:{{mental_health}}" name="mental_health">
+                            <label for="form-floating-1">Mental_Health History:{{mental_health}}</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="Depression:{{depression}}" name="depression">
+                            <label for="form-floating-1">Depression:{{depression}}</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="headache">
+Value <output>{{headache}} </output>
+                            <label for="form-floating-1">Headache</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="bp">
+Value <output>{{bp}} </output>
+                            <label for="form-floating-1">BloodPressure  </label>
+                        </div>
+                    </div><div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="sleep">
+Value <output>{{sleep}} </output>
+                            <label for="form-floating-1">Sleep Quality</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="breathe">
+Value <output>{{breathe}} </output>
+                            <label for="form-floating-1">Breathing Problem</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="noise">
+Value <output> {{noise}}</output>
+                            <label for="form-floating-1">Noise_Level</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="living">
+Value <output>{{living}} </output>
+                            <label for="form-floating-1">Living Conditions</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="safety">
+Value <output>{{safety}} </output>
+                            <label for="form-floating-1">Safety</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="basic">
+Value <output>{{basic}} </output>
+                            <label for="form-floating-1">Basic Needs</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="academic">
+Value <output>{{academic}} </output>
+                            <label for="form-floating-1">Academic Perforamance</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="study">
+Value <output>{{study}} </output>
+                            <label for="form-floating-1">Study Load</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="teacher">
+Value <output>{{teacher}} </output>
+                            <label for="form-floating-1">Teacher-Student Realtionship</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="future">
+Value <output> {{future}}</output>
+                            <label for="form-floating-1">Future Career Concern</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="social">
+Value <output>{{social}} </output>
+                            <label for="form-floating-1">Social Support</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="peer">
+Value <output>{{peer}} </output>
+                            <label for="form-floating-1">Peer-Pressure</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="extra">
+Value <output>{{extra}} </output>
+                            <label for="form-floating-1">Extra CurricularActivities</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="range" class="form-control" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value" name="bullying">
+Value <output>{{bullying}} </output>
+                            <label for="form-floating-1">Bullying</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="form-floating-1" placeholder="{{prediction}}" name="anxiety_level">
+                            <label for="form-floating-1">Mental Stress Prediction:{{prediction}}</label>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                   
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Predict Mental Stress</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6" style="min-height: 400px;">
+            <div class="position-relative h-100">
+              <!--  <iframe class="position-relative w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              -->
+            <img src="{% static 'img/2.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+{% endblock %}
